@@ -15,10 +15,6 @@ const Slider = () => {
     setDisplayAllProducts,
   } = React.useContext(UserContext);
 
-  React.useEffect(() => {
-    setValuesSlider(intervalPrices[0]);
-  }, [intervalPrices, setValuesSlider]);
-
   return (
     <div className="sliderRange">
       <div>
