@@ -122,6 +122,7 @@ function App() {
         });
       } catch (error) {
         console.error(error.message);
+        requestBrands();
       }
     };
     requestBrands();
@@ -149,6 +150,7 @@ function App() {
         setIntervalPrices([arrPrices[0], arrPrices[arrPrices.length - 1]]);
       } catch (error) {
         console.error(error.message);
+        requestPrices();
       }
     };
     requestPrices();
@@ -175,6 +177,10 @@ function App() {
         setIdItems(data.result);
       } catch (error) {
         console.error(error.message);
+        requestGetIds(
+          lastParametersRequest.current[0],
+          lastParametersRequest.current[1]
+        );
       }
     },
     [timeStamp]
@@ -223,6 +229,7 @@ function App() {
         window.scrollTo(0, 0);
       } catch (error) {
         console.error(error.message);
+        requestGetItems();
       }
     };
 
