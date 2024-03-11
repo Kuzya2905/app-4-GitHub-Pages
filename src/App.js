@@ -45,7 +45,9 @@ function App() {
   // Пагинация. Изменение текущих отображаемых продуктов на странице
   React.useEffect(() => {
     setCurrentItems(() =>
-      items ? items.slice(firstItemIndex, lastItemIndex) : 0
+      items && items.length > 0
+        ? items.slice(firstItemIndex, lastItemIndex)
+        : []
     );
   }, [items, firstItemIndex, lastItemIndex]);
 
@@ -199,6 +201,7 @@ function App() {
   React.useEffect(() => {
     const requestGetItems = async () => {
       try {
+        setCurrentPage(1);
         setLoadingItems(true);
         const password = "Valantis";
         const request = await axios.post(
@@ -225,7 +228,6 @@ function App() {
 
         setItems(uniqueData);
         setLoadingItems(false);
-
         window.scrollTo(0, 0);
       } catch (error) {
         console.error(error.message);
