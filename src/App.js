@@ -64,6 +64,7 @@ function App() {
   };
 
   // Пагинация. Функция для изменения текущией страницы отфильрованного списка
+
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
