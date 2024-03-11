@@ -104,7 +104,7 @@ function App() {
       try {
         const password = "Valantis";
         const request = await axios.post(
-          "http://api.valantis.store:40000/",
+          "https://api.valantis.store:41000/",
           {
             action: "get_fields",
             params: { field: "brand" },
@@ -133,7 +133,7 @@ function App() {
       try {
         const password = "Valantis";
         const request = await axios.post(
-          "http://api.valantis.store:40000/",
+          "https://api.valantis.store:41000/",
           {
             action: "get_fields",
             params: { field: "price" },
@@ -162,7 +162,7 @@ function App() {
       try {
         const password = "Valantis";
         const request = await axios.post(
-          "http://api.valantis.store:40000/",
+          "https://api.valantis.store:41000/",
           {
             action,
             params: valueParams,
@@ -196,7 +196,7 @@ function App() {
         setLoadingItems(true);
         const password = "Valantis";
         const request = await axios.post(
-          "http://api.valantis.store:40000/",
+          "https://api.valantis.store:41000/",
           {
             action: "get_items",
             params: {
